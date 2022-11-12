@@ -7,12 +7,13 @@ window.addEventListener("load", function() {
 	video.autoplay = false;
 	video.loop = false;
 	video.load();
-	document.querySelector('#volume').innerHTML = video.volume * 100 + '%'
+	//document.querySelector('#volume').innerHTML = video.volume * 100 + '%'
 });
 
  document.querySelector("#play").addEventListener("click", function() {
  	console.log("Play Video");
 	video.play();
+	document.querySelector('#volume').innerHTML = video.volume * 100 + '%'
  });
 
  document.querySelector("#pause").addEventListener("click", function() {
@@ -42,11 +43,13 @@ document.querySelector("#mute").addEventListener("click", function() {
     if (video.muted == false) {
 	video.muted = true;
 	console.log('Video is muted')
+	document.querySelector('#mute').innerHTML = 'Unmute'
 	}
 
 	else { 
 		video.muted = false
 		console.log('video is not muted')
+		document.querySelector('#mute').innerHTML = 'Mute'
 	}
 });
 
